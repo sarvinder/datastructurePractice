@@ -1,0 +1,42 @@
+class Min_Heap(object):
+	"""This is the min heap which stores the minimum element
+	    at the top of the element which gives the costant time
+	    access to the minimum element.it stores the element in
+	    the tree shape and the height of the tree is O(log (n))
+	    where n is the total number of elements."""
+
+	def __init__(self):
+		super(Min_Heap, self).__init__()
+		##initialize the array to store the elements
+		self.list_of_elements=[]
+		sef.size=0
+	
+	def insert(self,element):
+		self.list_of_elements[self.size]=element
+		self.size=self.size+1
+		min_heapify(self.size)
+
+	def min_heapify_up(location):
+		parent = int(location/2)
+		if parent < 0:
+			return
+		else:
+			##swap with parent if element is less than parent
+			if self.list_of_elements[location] < self.list_of_elements[parent]:
+				temp = self.list_of_elements[parent]
+				self.list_of_elements[parent] = self.list_of_elements[location]
+				self.list_of_elements[location] = parent 
+				min_heapify(parent)
+			else:
+				return
+	def min_heapify_down(location):
+		left_child = int(location+2)
+
+
+
+	def extract_min():
+		last_element = self.list_of_elements[self.size]
+		element = self.list_of_elements[0]
+		self.list_of_elements[0] = last_element
+		self.size = self.size-1
+		min_heapify_down(0)
